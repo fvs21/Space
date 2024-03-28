@@ -5,25 +5,24 @@
 #include <array>
 #include <vector>
 #include <SFML/Graphics/Color.hpp>
-#include "vector.h"
+#include "Vector.h"
 
 class Entity {
     private:
         std::string name;
         sf::Color color;
-        float x;
-        float y;
-        float z;
+        Point3D position;
         float mass;
         float radius;
         Vector velocity;
         Vector acceleration;
         Vector force;
     public:
-        Entity(std::string, std::array<int,3>, float, float, float, float, float, Vector, Vector, Vector);
-        std::tuple<int, int, int> getPos();
+        Entity(std::string, std::array<uint8_t,3>, Point3D, float, float, Vector, Vector, Vector);
+        std::array<int, 3> getPos();
         float getMass();
         float getRadius();
+        sf::Color getColor();
         void move();
         void setVelocity(float, float, float);
         void setAcceleration(float, float, float);

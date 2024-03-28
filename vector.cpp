@@ -1,9 +1,14 @@
-#include "vector.h"
+#include "Vector.h"
 
 Vector::Vector(float x, float y, float z) {
     this->x = x;
     this->y = y;
     this->z = z;
+}
+Vector::Vector() {
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
 }
 void Vector::add(Vector const& vector2) {
     this->x += vector2.x;

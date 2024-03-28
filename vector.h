@@ -3,6 +3,10 @@
 #include <cmath>
 #include <array>
 
+struct Point3D {
+    float x, y, z;
+};
+
 class Vector {
     private:
         float x;
@@ -14,6 +18,7 @@ class Vector {
         float magnitude;
     public:
         Vector(float, float, float);
+        Vector();
         float getX();
         float getY();
         float getZ();
