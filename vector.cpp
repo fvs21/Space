@@ -1,14 +1,20 @@
 #include "Vector.h"
 
+Vector::Vector() {}
+
 Vector::Vector(float x, float y, float z) {
     this->x = x;
     this->y = y;
     this->z = z;
+    this->calcMagnitude();
+    this->calcDirection();
 }
-Vector::Vector() {
-    this->x = 0;
-    this->y = 0;
-    this->z = 0;
+Vector::Vector(float magnitude, std::array<float, 3> angles) {
+    this->magnitude = magnitude;
+    this->alpha = angles[0];
+    this->beta = angles[1];
+    this->gamma = angles[2];
+    this->calcXYZ();
 }
 void Vector::add(Vector const& vector2) {
     this->x += vector2.x;
@@ -37,6 +43,11 @@ void Vector::setY(float y) {
 }
 void Vector::setZ(float z) {
     this->z = z;
+}
+void Vector::calcXYZ() {
+    this->x = cos(this->alpha)*this->magnitude;
+    this->y = cos(this->beta)*this->magnitude;
+    this->z = cos(this->gamma)*this->magnitude;
 }
 void Vector::calcMagnitude() {
     this->magnitude = sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2));

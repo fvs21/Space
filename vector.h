@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <array>
+#include <iostream>
 
 struct Point3D {
     float x, y, z;
@@ -16,17 +17,19 @@ class Vector {
         float beta;
         float gamma;
         float magnitude;
+        void calcMagnitude();
+        void calcDirection();
+        void calcXYZ();
     public:
         Vector(float, float, float);
         Vector();
+        Vector(float, std::array<float, 3>);
         float getX();
         float getY();
         float getZ();
         void setX(float);
         void setY(float);
         void setZ(float);
-        void calcMagnitude();
-        void calcDirection();
         float getMagnitude();
         std::array<float, 3> getDirection();
         void add(Vector const&);

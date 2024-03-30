@@ -4,12 +4,13 @@
 #include <cmath>
 #include <chrono>
 #include <vector>
+#include <iostream>
 #include "Entity.h"
 
 class Renderer3D {
     private:
         sf::RenderWindow* renderer;
-        std::vector<Entity> entities;
+        std::vector<Entity*> entities;
 
         float FOV = 10.0;
         float deltaTime = 0.0f;
@@ -17,6 +18,6 @@ class Renderer3D {
         int WindowSizeX;
         int WindowSizeY;
     public:
-        Renderer3D(sf::RenderWindow*, std::vector<Entity>&, int, int);
+        Renderer3D(sf::RenderWindow*, std::vector<Entity*>&, int, int);
         void render();
 };
