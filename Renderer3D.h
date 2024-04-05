@@ -12,7 +12,7 @@ class Renderer3D {
         sf::RenderWindow* renderer;
         std::vector<Entity*> entities;
 
-        float FOV = 10.0;
+        //float FOV = 10.0;
         float deltaTime = 0.0f;
 
         int WindowSizeX;

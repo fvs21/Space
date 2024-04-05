@@ -14,14 +14,14 @@ void Renderer3D::render() {
     this->renderer->clear(sf::Color::Black);
 
     for(size_t i = 0; i<this->entities.size(); i++) {
-        auto entity = entities.at(i);
+        auto *entity = entities.at(i);
         Point3D pos = entity->getPos();
-        //std::cout << entity->getPlanetName() << ": " << pos.x << " " << pos.y << " " << pos.z << '\n';
+        std::cout << entity->getPlanetName() << ": " << pos.x << " " << pos.y << " " << pos.z << '\n';
         entity->updateMovement(this->entities);
-        sf::CircleShape entity_shape(entity->getRadius() + (entity->getPos().z/this->FOV));
+        sf::CircleShape entity_shape(entity->getRadius() + (entity->getPos().z));
         entity_shape.setFillColor(entity->getColor());
         entity_shape.setPosition(pos.x, pos.y);
         this->renderer->draw(entity_shape);
     }
     this->renderer->display();
-}
+} 

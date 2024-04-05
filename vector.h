@@ -5,33 +5,33 @@
 #include <iostream>
 
 struct Point3D {
-    float x, y, z;
+    double x, y, z;
 };
 
 class Vector {
     private:
-        float x;
-        float y;
-        float z;
-        float alpha;
-        float beta;
-        float gamma;
-        float magnitude;
+        double x;
+        double y;
+        double z;
+        double alpha;
+        double beta;
+        double gamma;
+        double magnitude;
         void calcMagnitude();
         void calcDirection();
         void calcXYZ();
     public:
-        Vector(float, float, float);
+        Vector(double, double, double);
         Vector();
-        Vector(float, std::array<float, 3>);
-        float getX();
-        float getY();
-        float getZ();
-        void setX(float);
-        void setY(float);
-        void setZ(float);
-        float getMagnitude();
-        std::array<float, 3> getDirection();
+        Vector(double, std::array<double, 3>);
+        double getX();
+        double getY();
+        double getZ();
+        void setX(double);
+        void setY(double);
+        void setZ(double);
+        double getMagnitude();
+        std::array<double, 3> getDirection();
         void add(Vector const&);
         void substract(Vector const&);
 };

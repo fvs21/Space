@@ -2,14 +2,14 @@
 
 Vector::Vector() {}
 
-Vector::Vector(float x, float y, float z) {
+Vector::Vector(double x, double y, double z) {
     this->x = x;
     this->y = y;
     this->z = z;
     this->calcMagnitude();
     this->calcDirection();
 }
-Vector::Vector(float magnitude, std::array<float, 3> angles) {
+Vector::Vector(double magnitude, std::array<double, 3> angles) {
     this->magnitude = magnitude;
     this->alpha = angles[0];
     this->beta = angles[1];
@@ -26,22 +26,22 @@ void Vector::substract(Vector const& vector2) {
     this->y -= vector2.y;
     this->z -= vector2.z;
 }
-float Vector::getX() {
+double Vector::getX() {
     return this->x;
 }
-float Vector::getY() {
+double Vector::getY() {
     return this->y;
 }
-float Vector::getZ() {
+double Vector::getZ() {
     return this->z;
 }
-void Vector::setX(float x) {
+void Vector::setX(double x) {
     this->x = x;
 }
-void Vector::setY(float y) {
+void Vector::setY(double y) {
     this->y = y;
 }
-void Vector::setZ(float z) {
+void Vector::setZ(double z) {
     this->z = z;
 }
 void Vector::calcXYZ() {
@@ -53,14 +53,14 @@ void Vector::calcMagnitude() {
     this->magnitude = sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2));
 }
 void Vector::calcDirection() {
-    float magnitude = this->getMagnitude();
+    double magnitude = this->getMagnitude();
     this->alpha = acos(this->x/magnitude); 
     this->beta = acos(this->y/magnitude);
     this->gamma = acos(this->z/magnitude);
 }
-float Vector::getMagnitude() {
+double Vector::getMagnitude() {
     return this->magnitude;
 }
-std::array<float, 3> Vector::getDirection() {
-    return std::array<float, 3> {this->alpha, this->beta, this->gamma};
+std::array<double, 3> Vector::getDirection() {
+    return std::array<double, 3> {this->alpha, this->beta, this->gamma};
 }

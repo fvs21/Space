@@ -9,19 +9,14 @@
 sf::VideoMode videoMode = sf::VideoMode(2000, 1400);
 std::vector<Entity*> entities;
 
-Entity getNewEntity() {
-    std::array<uint8_t, 3> color{255, 255, 255};
-
-    return Entity("Earth", color, Point3D{200, 300, 0}, 2000, 30, Vector(0.0005, 0.0005, 0), Vector(0.0005, 0.0005, 0));
-}
-
 int main(int argc, char **argv) {
     sf::RenderWindow window(videoMode, "Space");
 
-    std::array<uint8_t, 3> color{255, 255, 255};
+    std::array<uint8_t, 3> white{255, 255, 255};
+    std::array<uint8_t, 3> orange{255, 165, 0};
 
-    Entity* entity1 = new Entity("Earth", color, Point3D{200, 300, -100}, 200000000000, 10, Vector(0, 0, 0), Vector(0, 0, 0));
-    Entity* entity2 = new Entity("Pepe", color, Point3D{1000, 800, 400}, 200000000000, 10, Vector(0, 0, 0), Vector(0, 0, 0));
+    Entity* entity1 = new Entity("Earth", white, Point3D{100.0f, 100.0f, 0.0f}, 5.0f, 4.0f, Vector(0.001f, 0.0001f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //5.972e24f
+    Entity* entity2 = new Entity("Sun", orange, Point3D{900.0f, 700.0f, 50.0f}, 1900000000.0f, 10.0f, Vector(0.0f, 0.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //1.989e30f
     entities.push_back(entity1);
     entities.push_back(entity2);
 
