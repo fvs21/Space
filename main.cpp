@@ -15,8 +15,8 @@ int main(int argc, char **argv) {
     std::array<uint8_t, 3> white{255, 255, 255};
     std::array<uint8_t, 3> orange{255, 165, 0};
 
-    Entity* entity1 = new Entity("Earth", white, Point3D{100.0f, 100.0f, 0.0f}, 5.0f, 4.0f, Vector(0.001f, 0.0001f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //5.972e24f
-    Entity* entity2 = new Entity("Sun", orange, Point3D{900.0f, 700.0f, 50.0f}, 1900000000.0f, 10.0f, Vector(0.0f, 0.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //1.989e30f
+    Entity* entity1 = new Entity("Earth", white, Point3D{100.0f, 100.0f, 0.0f}, 5000.0f, 4.0f, Vector(0.05f, 0.01f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //5.972e24f
+    Entity* entity2 = new Entity("Sun", orange, Point3D{900.0f, 700.0f, 50.0f}, 190000000000.0f, 10.0f, Vector(0.0f, 0.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f)); //1.989e30f
     entities.push_back(entity1);
     entities.push_back(entity2);
 
